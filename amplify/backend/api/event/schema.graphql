@@ -1,0 +1,42 @@
+type Event @model {
+  id: ID!
+  title: String!
+  description: String!
+  type: EventType! @connection
+  Status: Status ! @connection
+  location: String!
+  Date: AWSDateTime!
+  category: Category! @connection
+  organizer: Organizer! @connection 
+  stream: [Stream]
+}
+
+type EventType @model {
+  id: ID!
+  name: String!
+}
+
+type Category @model {
+  id: ID!
+  name: String!
+  
+}
+
+type Organizer @model {
+  id: ID!
+  name: String!
+}
+
+type Status @model {
+ id: ID!
+ name: String
+}
+
+type Stream @model {
+ id: ID!
+ title: String!
+ description: String!
+ country: String!
+ city: String!
+ streamUrl: String!
+}
